@@ -11,10 +11,12 @@ pipeline{
         }
         stage('Build') {
             steps {
-            	// gralew이 있어야됨. git clone해서 project를 가져옴.
-              sh 'chmod +x gradlew'
-              sh  './gradlew clean build'
-              sh 'ls -al ./build'
+                dir('Back-End'){
+                    // gralew이 있어야됨. git clone해서 project를 가져옴.
+                    sh 'chmod +x gradlew'
+                    sh  './gradlew clean build'
+                    sh 'ls -al ./build'
+                }
             }
             post {
                 success {
