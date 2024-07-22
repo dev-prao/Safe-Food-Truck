@@ -9,18 +9,20 @@ pipeline{
                 git branch: 'test', url: 'https://github.com/Safe-Food-Truck-SSAFY-11th/Safe-Food-Truck.git'
             }
         }
-        stage('Prepare'){
-            steps {
-                dir('Back-End') {
-                    sh 'chmod +x ./gradlew'
-                    sh './gradlew clean'
-                }
-            }
-        }
         stage('Build') {
             steps {
-                dir('Back-End') {
-                    sh './gradlew build -x test'
+            	// gralew이 있어야됨. git clone해서 project를 가져옴.
+              sh 'chmod +x gradlew'
+              sh  './gradlew clean build'
+              sh 'ls -al ./build'
+            }
+            post {
+                success {
+                    echo 'gradle build success'
+                }
+
+                failure {
+                    echo 'gradle build failed'
                 }
             }
         }
