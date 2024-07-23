@@ -3,6 +3,14 @@ pipeline {
     environment {
         PROJECT_NAME = 'sft' // 프로젝트 이름
     }
+    tools {
+        // Jenkins에서 'JDK_17'로 설정된 JDK를 사용합니다.
+        jdk 'java'
+        // Jenkins에서 'Gradle_6.7'로 설정된 Gradle을 사용합니다.
+        gradle 'gradle'
+        // git
+        git 'git'
+    }
     stages {
         stage('Checkout') {
             steps {
