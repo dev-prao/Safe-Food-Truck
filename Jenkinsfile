@@ -39,11 +39,6 @@ pipeline {
                 }
             }
         }
-        stage('Deploy Prepare') {
-            steps {
-                sh 'sudo kill $(pgrep -f sft || true' // 실행 중인 프로세스가 없을 경우 오류 무시
-            }
-        }
         stage('Deploy') {
             steps {
                 dir('Back-End') {
