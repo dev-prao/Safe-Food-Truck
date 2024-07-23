@@ -51,6 +51,7 @@ pipeline {
                     sh 'sleep 10' // 서버가 시작될 시간을 줍니다.
                     sh 'tail -n 20 app.log' // 마지막 20줄의 로그를 출력합니다.
                     sh 'ss -tuln | grep 8080' // 포트 8080이 열려 있는지 확인합니다.
+                    sh 'cat app.log' // 로그 파일 전체 내용을 출력합니다.
                 }
                 failure {
                     echo 'Spring Boot Run failed'
