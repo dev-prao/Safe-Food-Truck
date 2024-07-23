@@ -45,6 +45,14 @@ pipeline {
                     sh 'nohup java -jar ./build/libs/sft-0.0.1-SNAPSHOT.jar &'
                 }
             }
+            post {
+                success {
+                    echo 'Spring Boot Run success'
+                }
+                failure {
+                    echo 'Spring Boot Run failed'
+                }
+            }
         }
     }
 }
