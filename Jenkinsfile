@@ -9,10 +9,9 @@ pipeline {
                 git branch: 'test', url: 'https://github.com/Safe-Food-Truck-SSAFY-11th/Safe-Food-Truck.git'
             }
         }
-        stage('Setup Gradle Wrapper') {
+        stage('Prepare') {
             steps {
                 dir('Back-End') {
-                    sh 'gradle wrapper' // Gradle Wrapper 생성
                     sh 'chmod +x gradlew' // gradlew에 실행 권한 부여
                 }
             }
@@ -42,13 +41,13 @@ pipeline {
         }
         stage('Deploy Prepare') {
             steps {
-                sh 'sudo kill $(pgrep -f ${PROJECT_NAME}) || true' // 실행 중인 프로세스가 없을 경우 오류 무시
+                sh 'sudo kill $(pgrep -f sft-0.0.1-SNAPSHOT || true' // 실행 중인 프로세스가 없을 경우 오류 무시
             }
         }
         stage('Deploy') {
             steps {
                 dir('Back-End') {
-                    sh 'nohup java -jar ./build/libs/${PROJECT_NAME}.jar &'
+                    sh 'nohup java -jar ./build/libs/sft-0.0.1-SNAPSHOT.jar &'
                 }
             }
         }
