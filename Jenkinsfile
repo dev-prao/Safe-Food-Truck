@@ -8,8 +8,6 @@ pipeline {
         jdk 'java'
         // Jenkins에서 'Gradle_6.7'로 설정된 Gradle을 사용합니다.
         gradle 'gradle'
-        // git
-        git 'git'
     }
     stages {
         stage('Checkout') {
@@ -38,6 +36,7 @@ pipeline {
                 }
                 failure {
                     echo 'Gradle build failed'
+                    error 'Stopping pipeline'
                 }
             }
         }
@@ -47,11 +46,31 @@ pipeline {
                     sh './gradlew test'
                 }
             }
+            post {
+                success {
+                    echo 'Gradle test success'
+                }
+                failure {
+                    echo 'Gradle test failed'
+                    error 'Stopping pipeline'
+                }
+            }
         }
         stage('Deploy') {
             steps {
                 dir('Back-End') {
-                    sh 'nohup java -jar ./build/libs/sft-0.0.1-SNAPSHOT.jar --server.port=8081 &'
+                    script {
+                        // Stop any running instance
+                        sh '''
+                        if lsof -Pi :8081 -sTCP:LISTEN -t >/dev/null ; then
+                            echo "Stopping running instance on port 8081"
+                            kill -9 $(lsof -Pi :8081 -sTCP:LISTEN -t)
+                        fi
+                        '''
+
+                        // Start the new instance
+                        sh 'nohup java -jar ./build/libs/sft-0.0.1-SNAPSHOT.jar --server.port=8081 > application.log 2>&1 &'
+                    }
                 }
             }
             post {
@@ -60,6 +79,7 @@ pipeline {
                 }
                 failure {
                     echo 'Spring Boot Run failed'
+                    sh 'tail -n 50 application.log'
                 }
             }
         }
