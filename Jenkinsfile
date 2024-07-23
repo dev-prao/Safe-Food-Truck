@@ -44,6 +44,8 @@ pipeline {
             steps {
                 dir('Back-End') {
                     sh 'nohup java -jar ./build/libs/sft-0.0.1-SNAPSHOT.jar &'
+                    sh 'sleep 10' // 애플리케이션이 시작될 시간을 줌
+                    sh 'tail -n 50 application.log'
                 }
             }
             post {
