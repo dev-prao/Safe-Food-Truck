@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        PROJECT_NAME = 'safe-food-truck' // 프로젝트 이름
+        PROJECT_NAME = 'sft' // 프로젝트 이름
     }
     stages {
         stage('Checkout') {
@@ -41,7 +41,7 @@ pipeline {
         }
         stage('Deploy Prepare') {
             steps {
-                sh 'sudo kill $(pgrep -f sft-0.0.1-SNAPSHOT || true' // 실행 중인 프로세스가 없을 경우 오류 무시
+                sh 'sudo kill $(pgrep -f sft || true' // 실행 중인 프로세스가 없을 경우 오류 무시
             }
         }
         stage('Deploy') {
