@@ -21,6 +21,7 @@ pipeline {
                 dir('Back-End') {
                     sh './gradlew clean build' // 빌드 수행
                     sh 'ls -al ./build' // 빌드 결과 확인
+                    sh 'ls -al ./build/libs'
                 }
             }
             post {
