@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'docker:latest'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+    }
     environment {
         PROJECT_NAME = 'sft' // 프로젝트 이름
         DOCKER_IMAGE = 'sft-back'
