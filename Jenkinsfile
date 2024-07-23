@@ -42,7 +42,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir('Back-End') {
-                    sh 'nohup java -jar ./build/libs/sft-0.0.1-SNAPSHOT.jar &'
+                    sh 'nohup java -jar ./build/libs/sft-0.0.1-SNAPSHOT.jar app.log 2>&1 &'
                 }
             }
             post {
