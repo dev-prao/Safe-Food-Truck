@@ -19,6 +19,8 @@ RUN echo "빌드 후 파일 목록:" && ls -al build/libs
 
 ARG JAR_FILE=build/libs/sft-0.0.1-SNAPSHOT.jar
 
+RUN pwd
+
 COPY ${JAR_FILE} /app.jar
 
 # JAR 파일이 제대로 복사되었는지 확인
