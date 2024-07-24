@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  spring:
+    build:
+      context: ./Back-End
+      dockerfile: Dockerfile
+    image: sft-backend
+    container_name: spring
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./Back-End:/app
+    networks:
+      - app-network
+
+  react:
+    build:
+      context: ./Front-End
+      dockerfile: Dockerfile
+    image: sft-frontend
+    container_name: react
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./Front-End:/app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
