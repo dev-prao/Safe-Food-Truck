@@ -1,12 +1,12 @@
 FROM openjdk:17-alpine
 
-RUN pwd
-
 WORKDIR /app
 
-RUN pwd
+# 로컬 파일을 컨테이너로 복사
+COPY . /app
 
-RUN ls
+# 현재 디렉토리의 파일 목록을 로그로 찍기
+RUN ls -al
 
 RUN chmod +x gradlew
 
