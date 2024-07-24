@@ -3,19 +3,19 @@ FROM openjdk:17-alpine
 WORKDIR /app
 
 # 로컬 파일을 컨테이너로 복사
-COPY . /app
+COPY . .
 
 # 현재 디렉토리의 파일 목록을 로그로 찍기
-RUN echo "파일 목록:" && ls -al /app
+RUN echo "파일 목록:" && ls -al
 
 RUN chmod +x gradlew
 
 RUN ./gradlew clean build -x test
 
 # 빌드 후 파일 목록 출력
-RUN echo "빌드 후 파일 목록:" && ls -al /app/build/libs
+RUN echo "빌드 후 파일 목록:" && ls -al build/libs
 
-ARG JAR_FILE=/app/build/libs/sft-0.0.1-SNAPSHOT.jar
+ARG JAR_FILE=build/libs/sft-0.0.1-SNAPSHOT.jar
 
 COPY ${JAR_FILE} /app.jar
 
