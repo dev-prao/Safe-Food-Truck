@@ -43,4 +43,9 @@ public class Menu {
     @OneToOne(fetch = LAZY,cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "menu_image_id")
     private MenuImage menuImage;
+
+    private void addMenuImage(MenuImage menuImage) {
+        this.menuImage = menuImage;
+        menuImage.addMenu(this);
+    }
 }
