@@ -12,7 +12,7 @@ COPY gradle ./gradle
 RUN chmod +x gradlew
 
 # Download dependencies
-RUN ./gradlew build -x test --parallel --continue --refresh-dependencies
+RUN ./gradlew build -x
 
 # Copy the project files
 COPY . .
@@ -21,7 +21,7 @@ COPY . .
 RUN ./gradlew bootJar
 
 # Expose the port the application runs on
-EXPOSE 5000
+EXPOSE 8081
 
 # Run the application
 CMD ["java", "-jar", "build/libs/safefoodtruck-0.0.1-SNAPSHOT.jar"]
