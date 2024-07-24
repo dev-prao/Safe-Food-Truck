@@ -1,6 +1,5 @@
 package com.safefoodtruck.sft.menu.domain;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,7 +37,11 @@ public class MenuImage {
     @Column(name = "saved_path")
     private String savedPath;
 
-    @OneToOne(mappedBy = "menuImage", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(mappedBy = "menuImage")
     @JoinColumn(name = "menu_id")
     private Menu menu;
+
+    public void addMenu(Menu menu) {
+        this.menu = menu;
+    }
 }
