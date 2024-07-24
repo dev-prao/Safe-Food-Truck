@@ -1,5 +1,7 @@
 package com.safefoodtruck.sft.store.domain;
 
+import static jakarta.persistence.CascadeType.ALL;
+
 import com.safefoodtruck.sft.member.domain.Member;
 import com.safefoodtruck.sft.menu.domain.Menu;
 import jakarta.persistence.Column;
@@ -58,6 +60,11 @@ public class Store {
     @JoinColumn(name = "email")
     private Member owner;
 
-    @OneToMany(mappedBy = "store")
+    @OneToMany(mappedBy = "store", cascade = ALL, orphanRemoval = true)
     private List<Menu> menuList = new ArrayList<>();
+
+    private void addMenu(Menu menu) {
+        menuList.add(menu);
+        menu.addStore(this);
+    }
 }

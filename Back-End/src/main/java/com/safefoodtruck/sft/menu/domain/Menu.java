@@ -2,6 +2,7 @@ package com.safefoodtruck.sft.menu.domain;
 
 import static jakarta.persistence.FetchType.LAZY;
 
+import com.safefoodtruck.sft.store.domain.Store;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -40,9 +42,16 @@ public class Menu {
     @Column(name = "description")
     private String description;
 
+    @ManyToOne(fetch = LAZY)
+    @JoinColumn(name = "store_id")
+    private Store store;
+
     @OneToOne(fetch = LAZY,cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "menu_image_id")
     private MenuImage menuImage;
+
+    public void addStore(Store store) {
+        this.store = store;
+    }
 
     private void addMenuImage(MenuImage menuImage) {
         this.menuImage = menuImage;
