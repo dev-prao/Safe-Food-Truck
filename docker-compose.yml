@@ -5,6 +5,7 @@ services:
       dockerfile: Dockerfile
     image: sft-backend
     container_name: spring
+    restart: always
     ports:
       - "8081:8081"
     networks:
@@ -16,6 +17,7 @@ services:
       dockerfile: Dockerfile
     image: sft-frontend
     container_name: react
+    restart: always
     ports:
       - "3000:3000"
     networks:
