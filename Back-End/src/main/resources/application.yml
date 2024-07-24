@@ -19,5 +19,5 @@ logging:
     org.hibernate.SQL: info
 
 server:
-  port: 8081
+  port: 8082
 
