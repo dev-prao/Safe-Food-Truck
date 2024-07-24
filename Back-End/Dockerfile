@@ -2,6 +2,12 @@ FROM openjdk:17-alpine
 
 RUN pwd
 
+WORKDIR /app
+
+RUN pwd
+
+RUN ls
+
 RUN chmod +x gradlew
 
 RUN ./gradlew clean build -x test
