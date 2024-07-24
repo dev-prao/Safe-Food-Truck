@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.safefoodtruck.sft.SftApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-24T12:18:35" hostname="DESKTOP-MMCQPV1" time="0.515">
+<testsuite name="com.safefoodtruck.sft.SftApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-24T12:24:06" hostname="DESKTOP-MMCQPV1" time="0.491">
   <properties/>
-  <testcase name="contextLoads()" classname="com.safefoodtruck.sft.SftApplicationTests" time="0.515"/>
-  <system-out><![CDATA[21:18:33.992 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.safefoodtruck.sft.SftApplicationTests]: SftApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-21:18:34.061 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.safefoodtruck.sft.SftApplication for test class com.safefoodtruck.sft.SftApplicationTests
+  <testcase name="contextLoads()" classname="com.safefoodtruck.sft.SftApplicationTests" time="0.491"/>
+  <system-out><![CDATA[21:24:05.367 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.safefoodtruck.sft.SftApplicationTests]: SftApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:24:05.436 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.safefoodtruck.sft.SftApplication for test class com.safefoodtruck.sft.SftApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,9 +14,9 @@
 
  :: Spring Boot ::                (v3.3.1)
 
-2024-07-24T21:18:34.359+09:00  INFO 14484 --- [    Test worker] c.safefoodtruck.sft.SftApplicationTests  : Starting SftApplicationTests using Java 17.0.11 with PID 14484 (started by SSAFY in C:\Users\SSAFY\Desktop\Safe-Food-Truck\Back-End)
-2024-07-24T21:18:34.359+09:00  INFO 14484 --- [    Test worker] c.safefoodtruck.sft.SftApplicationTests  : No active profile set, falling back to 1 default profile: "default"
-2024-07-24T21:18:35.210+09:00  INFO 14484 --- [    Test worker] c.safefoodtruck.sft.SftApplicationTests  : Started SftApplicationTests in 1.017 seconds (process running for 1.762)
+2024-07-24T21:24:05.718+09:00  INFO 9432 --- [    Test worker] c.safefoodtruck.sft.SftApplicationTests  : Starting SftApplicationTests using Java 17.0.11 with PID 9432 (started by SSAFY in C:\Users\SSAFY\Desktop\Safe-Food-Truck\Back-End)
+2024-07-24T21:24:05.718+09:00  INFO 9432 --- [    Test worker] c.safefoodtruck.sft.SftApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2024-07-24T21:24:06.523+09:00  INFO 9432 --- [    Test worker] c.safefoodtruck.sft.SftApplicationTests  : Started SftApplicationTests in 1.002 seconds (process running for 1.708)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
