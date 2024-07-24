@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Use an official OpenJDK runtime as a parent image
 FROM openjdk:17-jdk-slim
 
@@ -23,9 +22,3 @@ EXPOSE 5000
 
 # Run the application
 CMD ["java", "-jar", "build/libs/safefoodtruck-0.0.1-SNAPSHOT.jar"]
-=======
-FROM openjdk:17-jdk
-ARG JAR_FILE=build/libs/sft-0.0.1-SNAPSHOT.jar
-ADD ${JAR_FILE} sft-springboot.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/sft-springboot.jar"]
->>>>>>> 3cf26bbae4a6750606e0a2038c97b6ae9c725194
