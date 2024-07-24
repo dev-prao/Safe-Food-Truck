@@ -14,13 +14,13 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.DynamicInsert;
 
-@Entity
 @Table(name = "menu_image")
-@DynamicInsert
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
 @Getter
 @ToString
+@DynamicInsert
+@NoArgsConstructor
+@AllArgsConstructor
 public class MenuImage {
 
     @Id
