@@ -2,6 +2,8 @@ FROM openjdk:17-alpine
 
 WORKDIR /app
 
+RUN pwd
+
 # 로컬 파일을 컨테이너로 복사
 COPY . .
 
