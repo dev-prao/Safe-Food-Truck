@@ -8,6 +8,9 @@ WORKDIR /app
 COPY build.gradle settings.gradle gradlew ./
 COPY gradle ./gradle
 
+# Give execution permissions to gradlew
+RUN chmod +x gradlew
+
 # Download dependencies
 RUN ./gradlew build -x test --parallel --continue --refresh-dependencies
 
