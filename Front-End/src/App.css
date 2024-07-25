@@ -1,12 +1,12 @@
+
 @import url('https://fastly.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 
-
 * {
-  font-family: "galmuri9";
+  font-family: galmuri9;
 }
 
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
