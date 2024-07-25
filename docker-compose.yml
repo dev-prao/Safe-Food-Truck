@@ -1,23 +1,15 @@
 services:
   spring:
-    build:
-      context: ./Back-End
-      dockerfile: Dockerfile
-    image: sft-backend1
     container_name: spring
-    restart: always
+    image: spring-app
     ports:
-      - "8081:8081"
+      - "8081:8080"
     networks:
-      - app-network
+      -  app-network
 
   react:
-    build:
-      context: ./Front-End
-      dockerfile: Dockerfile
-    image: sft-frontend
     container_name: react
-    restart: always
+    image: react-app
     ports:
       - "3000:3000"
     networks:
