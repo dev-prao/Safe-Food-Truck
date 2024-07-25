@@ -1,5 +1,7 @@
 package com.safefoodtruck.sft.menu.service;
 
-public interface MenuService {
+import com.safefoodtruck.sft.menu.dto.request.MenuListRegistRequestDto;
 
+public interface MenuService {
+    void registMenu(int storeId, MenuListRegistRequestDto menuListRegistRequestDto);
 }
