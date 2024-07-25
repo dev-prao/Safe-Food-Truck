@@ -7,7 +7,7 @@ services:
     container_name: spring
     restart: always
     ports:
-      - "8081:8080"
+      - "8081:8081"
     networks:
       - app-network
 
