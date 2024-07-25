@@ -2,19 +2,15 @@ services:
   spring:
     container_name: spring
     image: spring-app
-    ports:
-      - "8081:8080"
     networks:
       -  app-network
 
   react:
     container_name: react
     image: react-app
-    ports:
-      - "3000:3000"
     networks:
       - app-network
 
 networks:
   app-network:
-    driver: bridge
+    external: true

@@ -1,9 +1,10 @@
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/sft
-    username: root
-    password: ssafy
-    driver-class-name: com.mysql.cj.jdbc.Driver
+#  profiles:
+#  datasource:
+#    url: jdbc:mysql://i11b102.p.ssafy.io:3306/sft
+#    username: root
+#    password: ssafy
+#    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
@@ -18,3 +19,8 @@ spring:
 logging:
   level:
     org.hibernate.SQL: info
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
