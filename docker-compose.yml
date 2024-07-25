@@ -3,7 +3,7 @@ services:
     build:
       context: ./Back-End
       dockerfile: Dockerfile
-    image: sft-backend
+    image: sft-backend1
     container_name: spring
     restart: always
     ports:
