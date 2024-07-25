@@ -1,4 +1,4 @@
-package com.safefoodtruck.sft.menu.exception;
+package com.safefoodtruck.sft.store.exception;
 
 public class StoreNotFoundException extends RuntimeException {
 
