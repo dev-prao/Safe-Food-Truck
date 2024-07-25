@@ -45,10 +45,10 @@ public class Store {
     private String description;
 
     @Column(name = "latitude")
-    private double latitude;
+    private String latitude;
 
     @Column(name = "longitude")
-    private double longitude;
+    private String longitude;
 
     @Column(name = "isClean")
     private boolean isClean;
