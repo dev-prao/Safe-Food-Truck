@@ -30,16 +30,22 @@ import org.hibernate.annotations.DynamicInsert;
 @AllArgsConstructor
 public class Menu {
 
+    public Menu(String name, long price, String description) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "menu_id")
-    private long id;
+    private int id;
 
     @Column(name = "menu_name")
     private String name;
 
     @Column(name = "price")
-    private int price;
+    private long price;
 
     @Column(name = "description")
     private String description;
@@ -58,5 +64,9 @@ public class Menu {
     private void addMenuImage(MenuImage menuImage) {
         this.menuImage = menuImage;
         menuImage.addMenu(this);
+    }
+
+    public static Menu of(String name, long price, String description) {
+        return new Menu(name, price, description);
     }
 }
