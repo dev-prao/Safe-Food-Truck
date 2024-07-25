@@ -33,7 +33,10 @@ public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "store_id")
-    private long id;
+    private int id;
+
+    @Column(name = "store_name")
+    private String name;
 
     @Column(name = "store_type")
     private String storeType;
